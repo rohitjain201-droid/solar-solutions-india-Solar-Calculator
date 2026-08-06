@@ -565,25 +565,66 @@
   </section>
 
   <!-- ========== SOLAR CALCULATOR ========== -->
-  <section id="calculator">
-    <div class="container">
-      <h2 class="section-title">☀ सोलर सेविंग्स कैलकुलेटर</h2>
-      <p class="section-subtitle">अपना मासिक बिजली बिल डालकर तुरंत बचत एवं सिस्टम साइज जानें</p>
+<section id="calculator">
+  <div class="container">
+    <h2 class="section-title">☀ सोलर सेविंग्स कैलकुलेटर</h2>
+    <p class="section-subtitle">अपना मासिक बिजली बिल डालकर तुरंत बचत एवं सिस्टम साइज जानें</p>
+    
+    <div class="calculator-card" style="max-width: 520px; margin: 0 auto;">
       
-      <div class="calculator-card">
-        <!-- Replace the src below with your actual live calculator GitHub Pages / Netlify URL -->
-        <iframe 
-          https://rohitjain201-droid.github.io/solar-calculator/ 
-          title="Solar Savings Calculator"
-          loading="lazy"
-          allowfullscreen>
-        </iframe>
+      <div style="padding: 10px 5px;">
+        <div class="form-group">
+          <label for="calcBill">मासिक बिजली बिल (₹) *</label>
+          <input type="number" id="calcBill" placeholder="उदा. 3500" min="500" style="width:100%; padding:12px; border-radius:10px; border:1.5px solid #cbd5e1; font-size:1.1rem;">
+        </div>
+
+        <div class="form-group" style="margin-top:1rem;">
+          <label for="calcState">राज्य चुनें</label>
+          <select id="calcState" style="width:100%; padding:12px; border-radius:10px; border:1.5px solid #cbd5e1; font-size:1rem;">
+            <option value="up">उत्तर प्रदेश (UP)</option>
+            <option value="uk">उत्तराखंड (UK)</option>
+          </select>
+        </div>
+
+        <button onclick="calculateSolar()" class="btn btn-primary" style="width:100%; margin-top:1.5rem; padding:14px; font-size:1.1rem;">
+          ⚡ बचत निकालें
+        </button>
+
+        <!-- Result Box -->
+        <div id="calcResult" style="display:none; margin-top:1.8rem; background:#f0f9ff; border:2px solid #0b3d91; border-radius:12px; padding:1.5rem;">
+          <h3 style="color:#0b3d91; margin-bottom:1rem; text-align:center;">आपका अनुमानित रिजल्ट</h3>
+          
+          <div style="display:grid; gap:12px; font-size:1.05rem;">
+            <div style="display:flex; justify-content:space-between;">
+              <span>सुझाया गया सिस्टम साइज:</span>
+              <strong id="resSize">—</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span>अनुमानित सालाना बचत:</span>
+              <strong id="resSaving" style="color:#16a34a;">—</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span>लगभग पेबैक पीरियड:</span>
+              <strong id="resPayback">—</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span>सरकारी सब्सिडी (अंदाजन):</span>
+              <strong id="resSubsidy">—</strong>
+            </div>
+          </div>
+
+          <p style="margin-top:1.2rem; font-size:0.9rem; color:#64748b; text-align:center;">
+            * यह अनुमानित गणना है। सटीक कोटेशन के लिए फॉर्म भरें।
+          </p>
+
+          <a href="#contact" class="btn btn-primary" style="width:100%; margin-top:1rem; text-align:center;">
+            फ्री साइट सर्वे बुक करें
+          </a>
+        </div>
       </div>
-      <p style="text-align:center; margin-top:1rem; font-size:0.9rem; color:var(--muted);">
-        कैलकुलेटर लोड नहीं हो रहा? <a href="#contact" style="color:var(--primary);">यहाँ क्लिक करके सीधे लीड भेजें</a>
-      </p>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ========== AUTHORIZED DEALERS / PARTNERS ========== -->
   <section id="partners">
@@ -741,54 +782,51 @@
 
   <!-- ========== JAVASCRIPT ========== -->
   <script>
-    function sendToWhatsApp() {
-      // Get form values
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const monthlyBill = document.getElementById('monthlyBill').value.trim();
-      const location = document.getElementById('location').value.trim();
-      const message = document.getElementById('message').value.trim();
+    function calculateSolar() {
+  const bill = parseFloat(document.getElementById('calcBill').value);
+  const state = document.getElementById('calcState').value;
 
-      // Basic validation
-      if (!name || !phone || !monthlyBill || !location) {
-        alert('कृपया नाम, मोबाइल, मासिक बिल और शहर भरें।');
-        return;
-      }
+  if (!bill || bill < 500) {
+    alert('कृपया सही मासिक बिल डालें (कम से कम ₹500)');
+    return;
+  }
 
-      if (phone.length !== 10 || isNaN(phone)) {
-        alert('कृपया सही 10 अंकों का मोबाइल नंबर डालें।');
-        return;
-      }
+  // Simple estimation logic (UP/UK ke liye approximate)
+  let systemSize, annualSaving, payback, subsidy;
 
-      // Build WhatsApp message
-      let text = `☀ *नया सोलर लीड* ☀%0A%0A`;
-      text += `*नाम:* ${name}%0A`;
-      text += `*मोबाइल:* ${phone}%0A`;
-      text += `*मासिक बिजली बिल:* ₹${monthlyBill}%0A`;
-      text += `*शहर/जिला:* ${location}%0A`;
-      
-      if (message) {
-        text += `*अतिरिक्त जानकारी:* ${message}%0A`;
-      }
-      
-      text += `%0A---%0ASource: SolarUP Website`;
+  if (bill <= 2000) {
+    systemSize = "2 - 3 kW";
+    annualSaving = Math.round(bill * 10 * 0.85);
+    payback = "3.5 - 4.5 साल";
+    subsidy = "₹40,000 - ₹55,000";
+  } else if (bill <= 4000) {
+    systemSize = "3 - 5 kW";
+    annualSaving = Math.round(bill * 11 * 0.85);
+    payback = "3 - 4 साल";
+    subsidy = "₹55,000 - ₹78,000";
+  } else if (bill <= 7000) {
+    systemSize = "5 - 7 kW";
+    annualSaving = Math.round(bill * 11.5 * 0.85);
+    payback = "3 - 3.8 साल";
+    subsidy = "₹70,000 - ₹90,000";
+  } else {
+    systemSize = "7 - 10 kW+";
+    annualSaving = Math.round(bill * 12 * 0.85);
+    payback = "2.8 - 3.5 साल";
+    subsidy = "₹80,000+ (कस्टम)";
+  }
 
-      // Replace with your actual WhatsApp number (country code without +)
-      // Example: 919876543210 for India
-      const whatsappNumber = "919910601787";
+  // Show result
+  document.getElementById('resSize').innerText = systemSize;
+  document.getElementById('resSaving').innerText = "₹" + annualSaving.toLocaleString('en-IN') + " / साल";
+  document.getElementById('resPayback').innerText = payback;
+  document.getElementById('resSubsidy').innerText = subsidy;
 
-      const url = `https://wa.me/${whatsappNumber}?text=${text}`;
-      window.open(url, '_blank');
-    }
-
-    // Optional: Smooth scroll for nav links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+  document.getElementById('calcResult').style.display = 'block';
+  
+  // Smooth scroll to result
+  document.getElementById('calcResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
       });
     });
   </script>
