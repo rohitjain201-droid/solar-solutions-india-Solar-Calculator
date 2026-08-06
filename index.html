@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="उत्तर प्रदेश एवं उत्तराखंड में सोलर पैनल इंस्टॉलेशन, सब्सिडी, कैलकुलेटर एवं प्रमाणित पार्टनर डीलर्स। फ्री कंसल्टेशन।" />
+  <title>सोलर लीड जनरेशन | UP & Uttarakhand Solar Consultation</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #0b3d91;
+      --primary-dark: #072a66;
+      --accent: #f59e0b;
+      --green: #16a34a;
+      --green-dark: #15803d;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Noto Sans Devanagari', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ========== NAV ========== */
+    nav {
+      background: var(--primary);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.9rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.92);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      background: linear-gradient(135deg, #0b3d91 0%, #0f5bb5 50%, #1e40af 100%);
+      color: white;
+      padding: 4rem 1.25rem 3.5rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.75rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 680px;
+      margin: 0 auto 1.75rem;
+      opacity: 0.95;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #1e293b;
+    }
+
+    .btn-primary:hover {
+      background: #e08e0b;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    /* ========== SECTIONS ========== */
+    section {
+      padding: 3.5rem 1.25rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+    }
+
+    /* ========== SUBSIDY TABLE ========== */
+    #subsidy {
+      background: white;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+
+    th, td {
+      padding: 1rem 1.25rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--primary);
+      color: white;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background: #f1f5f9;
+    }
+
+    tr:hover {
+      background: #e0f2fe;
+    }
+
+    /* ========== CALCULATOR ========== */
+    #calculator {
+      background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%);
+    }
+
+    .calculator-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.25rem;
+      box-shadow: 0 8px 30px rgba(11, 61, 145, 0.12);
+      border: 2px solid #bae6fd;
+      overflow: hidden;
+    }
+
+    .calculator-card iframe {
+      width: 100%;
+      height: 620px;
+      border: none;
+      border-radius: 10px;
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      .calculator-card iframe {
+        height: 780px;
+      }
+    }
+
+    /* ========== PARTNERS ========== */
+    #partners {
+      background: white;
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .partner-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      transition: all 0.25s;
+    }
+
+    .partner-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+      border-color: #93c5fd;
+    }
+
+    .partner-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #0b3d91, #1e40af);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin: 0 auto 1rem;
+    }
+
+    .partner-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+      color: var(--primary);
+    }
+
+    .partner-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      margin-top: 0.75rem;
+    }
+
+    /* ========== AMC ========== */
+    #amc {
+      background: #f8fafc;
+    }
+
+    .amc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .amc-card {
+      background: white;
+      border-radius: 14px;
+      padding: 2rem 1.75rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .amc-card.popular {
+      border: 2px solid var(--primary);
+    }
+
+    .amc-card.popular::before {
+      content: "सबसे लोकप्रिय";
+      position: absolute;
+      top: 12px;
+      right: -28px;
+      background: var(--primary);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.25rem 2rem;
+      transform: rotate(45deg);
+    }
+
+    .amc-card h3 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .amc-price {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0.75rem 0;
+    }
+
+    .amc-price span {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .amc-card ul {
+      list-style: none;
+      margin: 1.25rem 0 1.5rem;
+    }
+
+    .amc-card li {
+      padding: 0.4rem 0;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .amc-card li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    /* ========== CONTACT / FORM ========== */
+    #contact {
+      background: linear-gradient(180deg, #0b3d91 0%, #072a66 100%);
+      color: white;
+    }
+
+    #contact .section-title {
+      color: white;
+    }
+
+    #contact .section-subtitle {
+      color: rgba(255,255,255,0.85);
+    }
+
+    .form-card {
+      background: white;
+      color: var(--text);
+      border-radius: 16px;
+      padding: 2rem 1.75rem;
+      max-width: 560px;
+      margin: 0 auto;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    }
+
+    .form-group {
+      margin-bottom: 1.15rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+      color: #334155;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(11, 61, 145, 0.15);
+    }
+
+    .form-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn-email {
+      background: var(--primary);
+      color: white;
+      width: 100%;
+      padding: 0.95rem;
+      font-size: 1.05rem;
+    }
+
+    .btn-email:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-whatsapp {
+      background: var(--green);
+      color: white;
+      width: 100%;
+      padding: 0.95rem;
+      font-size: 1.05rem;
+    }
+
+    .btn-whatsapp:hover {
+      background: var(--green-dark);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 2.5rem 1.25rem;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: #93c5fd;
+      text-decoration: none;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.9rem;
+      }
+      .hero {
+        padding: 3rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="logo">☀ SolarUP</a>
+      <ul class="nav-links">
+        <li><a href="#subsidy">सब्सिडी</a></li>
+        <li><a href="#calculator">सोलर कैलकुलेटर</a></li>
+        <li><a href="#partners">हमारे पार्टनर डीलर्स</a></li>
+        <li><a href="#amc">AMC सर्विस</a></li>
+        <li><a href="#contact">संपर्क / लीड</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero">
+    <h1>उत्तर प्रदेश & उत्तराखंड में<br>सोलर पैनल लगवाएं – सब्सिडी के साथ</h1>
+    <p>MNRE प्रमाणित इंस्टॉलर्स • फ्री साइट सर्वे • बिजली बिल 80-90% तक कम • सरकारी सब्सिडी सहायता</p>
+    <div class="hero-cta">
+      <a href="#calculator" class="btn btn-primary">☀ सोलर कैलकुलेटर खोलें</a>
+      <a href="#contact" class="btn btn-outline">फ्री कंसल्टेशन बुक करें</a>
+    </div>
+  </header>
+
+  <!-- ========== SUBSIDY TABLE ========== -->
+  <section id="subsidy">
+    <div class="container">
+      <h2 class="section-title">सरकारी सब्सिडी टेबल (UP & UK)</h2>
+      <p class="section-subtitle">नवीनतम MNRE / राज्य सब्सिडी संरचना (अंदाजन)</p>
+      
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>सिस्टम साइज</th>
+              <th>केंद्र सब्सिडी</th>
+              <th>राज्य सब्सिडी (UP/UK)</th>
+              <th>कुल बचत</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1-3 kW</td>
+              <td>₹18,000 / kW</td>
+              <td>अतिरिक्त लाभ</td>
+              <td>₹40,000+</td>
+            </tr>
+            <tr>
+              <td>3-10 kW</td>
+              <td>₹18,000 (पहले 3kW) + ₹9,000</td>
+              <td>राज्य स्कीम अनुसार</td>
+              <td>₹70,000 – ₹1.2 लाख</td>
+            </tr>
+            <tr>
+              <td>10 kW+</td>
+              <td>सीमित / कमर्शियल</td>
+              <td>विशेष योजना</td>
+              <td>कस्टम कोटेशन</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="text-align:center; margin-top:1rem; font-size:0.9rem; color:var(--muted);">
+        * सब्सिडी राशि समय-समय पर बदल सकती है। सटीक गणना के लिए कैलकुलेटर या फॉर्म भरें।
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== SOLAR CALCULATOR ========== -->
+  <section id="calculator">
+    <div class="container">
+      <h2 class="section-title">☀ सोलर सेविंग्स कैलकुलेटर</h2>
+      <p class="section-subtitle">अपना मासिक बिजली बिल डालकर तुरंत बचत एवं सिस्टम साइज जानें</p>
+      
+      <div class="calculator-card">
+        <!-- Replace the src below with your actual live calculator GitHub Pages / Netlify URL -->
+        <iframe 
+          https://rohitjain201-droid.github.io/solar-calculator/ 
+          title="Solar Savings Calculator"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p style="text-align:center; margin-top:1rem; font-size:0.9rem; color:var(--muted);">
+        कैलकुलेटर लोड नहीं हो रहा? <a href="#contact" style="color:var(--primary);">यहाँ क्लिक करके सीधे लीड भेजें</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== AUTHORIZED DEALERS / PARTNERS ========== -->
+  <section id="partners">
+    <div class="container">
+      <h2 class="section-title">हमारे प्रमाणित पार्टनर डीलर्स</h2>
+      <p class="section-subtitle">Authorized MNRE Installer Network – UP & Uttarakhand</p>
+      
+      <div class="partners-grid">
+        <div class="partner-card">
+          <div class="partner-icon">☀</div>
+          <h3>GreenRay Solar Solutions</h3>
+          <p>लखनऊ • कानपुर • गोरखपुर</p>
+          <p style="margin-top:0.5rem; font-size:0.85rem;">Residential + Commercial</p>
+          <span class="badge">MNRE Authorized</span>
+        </div>
+
+        <div class="partner-card">
+          <div class="partner-icon">⚡</div>
+          <h3>Uttarakhand Solar Hub</h3>
+          <p>देहरादून • हरिद्वार • ऋषिकेश</p>
+          <p style="margin-top:0.5rem; font-size:0.85rem;">Rooftop Specialists</p>
+          <span class="badge">MNRE + UKNEDA</span>
+        </div>
+
+        <div class="partner-card">
+          <div class="partner-icon">🏠</div>
+          <h3>Agra Power Solar</h3>
+          <p>आगरा • मथुरा • अलीगढ़</p>
+          <p style="margin-top:0.5rem; font-size:0.85rem;">Home & SME Focus</p>
+          <span class="badge">Authorized Installer</span>
+        </div>
+
+        <div class="partner-card">
+          <div class="partner-icon">🔧</div>
+          <h3>Himalayan Green Energy</h3>
+          <p>नैनीताल • अल्मोड़ा • पिथौरागढ़</p>
+          <p style="margin-top:0.5rem; font-size:0.85rem;">Hill Region Experts</p>
+          <span class="badge">MNRE Partner</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AMC / MAINTENANCE ========== -->
+  <section id="amc">
+    <div class="container">
+      <h2 class="section-title">सोलर पैनल मेंटेनेंस एवं सफाई सर्विसेस (AMC)</h2>
+      <p class="section-subtitle">पैनल की उम्र बढ़ाएं, आउटपुट बनाए रखें – लीड कैप्चर के लिए परफेक्ट</p>
+      
+      <div class="amc-grid">
+        <div class="amc-card">
+          <h3>बेसिक क्लीनिंग</h3>
+          <div class="amc-price">₹1,999 <span>/ विज़िट</span></div>
+          <ul>
+            <li>पैनल धुलाई (पानी + ब्रश)</li>
+            <li>विज़ुअल इंस्पेक्शन</li>
+            <li>1 विज़िट / वर्ष</li>
+            <li>रिपोर्ट व्हाट्सएप पर</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width:100%;">अभी बुक करें</a>
+        </div>
+
+        <div class="amc-card popular">
+          <h3>स्टैंडर्ड AMC</h3>
+          <div class="amc-price">₹4,999 <span>/ वर्ष</span></div>
+          <ul>
+            <li>2 क्लीनिंग विज़िट</li>
+            <li>इनवर्टर चेक-अप</li>
+            <li>वायरिंग इंस्पेक्शन</li>
+            <li>प्रदर्शन रिपोर्ट</li>
+            <li>प्राथमिकता सपोर्ट</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width:100%;">अभी बुक करें</a>
+        </div>
+
+        <div class="amc-card">
+          <h3>प्रीमियम AMC</h3>
+          <div class="amc-price">₹8,999 <span>/ वर्ष</span></div>
+          <ul>
+            <li>4 क्लीनिंग + चेक</li>
+            <li>फुल सिस्टम हेल्थ चेक</li>
+            <li>स्पेयर पार्ट्स डिस्काउंट</li>
+            <li>24×7 हेल्पलाइन</li>
+            <li>वार्षिक आउटपुट गारंटी</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width:100%;">अभी बुक करें</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DUAL-ACTION LEAD FORM ========== -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">फ्री कंसल्टेशन / लीड फॉर्म</h2>
+      <p class="section-subtitle">नीचे फॉर्म भरें – ईमेल या सीधे व्हाट्सएप पर भेजें</p>
+      
+      <div class="form-card">
+        <form action="https://formspree.io/f/https://formspree.io/f/meajokkz" method="POST" id="leadForm">
+          <!-- Replace YOUR_FORM_ID with your actual Formspree endpoint -->
+          
+          <div class="form-group">
+            <label for="name">पूरा नाम *</label>
+            <input type="text" id="name" name="name" required placeholder="आपका नाम" />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">मोबाइल नंबर *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="10 अंकों का मोबाइल" pattern="[0-9]{10}" />
+          </div>
+
+          <div class="form-group">
+            <label for="monthlyBill">मासिक बिजली बिल (Monthly Bill ₹) *</label>
+            <input type="number" id="monthlyBill" name="monthly_bill" required placeholder="उदा. 3500" min="500" />
+          </div>
+
+          <div class="form-group">
+            <label for="location">शहर / जिला *</label>
+            <input type="text" id="location" name="location" required placeholder="उदा. लखनऊ, देहरादून" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">अतिरिक्त जानकारी (वैकल्पिक)</label>
+            <textarea id="message" name="message" rows="3" placeholder="घर का साइज, रूफटॉप उपलब्धता आदि..."></textarea>
+          </div>
+
+          <!-- Hidden fields for Formspree -->
+          <input type="hidden" name="_subject" value="New Solar Lead - UP/UK" />
+          <input type="text" name="_gotcha" style="display:none" />
+
+          <div class="form-buttons">
+            <!-- Button 1: Formspree Email Submit -->
+            <button type="submit" class="btn btn-email">
+              📩 ईमेल पर सबमिट करें (Submit via Email)
+            </button>
+
+            <!-- Button 2: WhatsApp Direct -->
+            <button type="button" class="btn btn-whatsapp" onclick="sendToWhatsApp()">
+              💬 सीधे व्हाट्सएप पर भेजें (Send via WhatsApp)
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p>© 2025 SolarUP Lead Platform • Operating in Uttar Pradesh & Uttarakhand</p>
+    <p style="margin-top:0.5rem;">
+      MNRE Guidelines के अनुसार • Genuine Installers Network • 
+      <a href="#contact">संपर्क करें</a>
+    </p>
+  </footer>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    function sendToWhatsApp() {
+      // Get form values
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const monthlyBill = document.getElementById('monthlyBill').value.trim();
+      const location = document.getElementById('location').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      // Basic validation
+      if (!name || !phone || !monthlyBill || !location) {
+        alert('कृपया नाम, मोबाइल, मासिक बिल और शहर भरें।');
+        return;
+      }
+
+      if (phone.length !== 10 || isNaN(phone)) {
+        alert('कृपया सही 10 अंकों का मोबाइल नंबर डालें।');
+        return;
+      }
+
+      // Build WhatsApp message
+      let text = `☀ *नया सोलर लीड* ☀%0A%0A`;
+      text += `*नाम:* ${name}%0A`;
+      text += `*मोबाइल:* ${phone}%0A`;
+      text += `*मासिक बिजली बिल:* ₹${monthlyBill}%0A`;
+      text += `*शहर/जिला:* ${location}%0A`;
+      
+      if (message) {
+        text += `*अतिरिक्त जानकारी:* ${message}%0A`;
+      }
+      
+      text += `%0A---%0ASource: SolarUP Website`;
+
+      // Replace with your actual WhatsApp number (country code without +)
+      // Example: 919876543210 for India
+      const whatsappNumber = "919910601787";
+
+      const url = `https://wa.me/${whatsappNumber}?text=${text}`;
+      window.open(url, '_blank');
+    }
+
+    // Optional: Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
